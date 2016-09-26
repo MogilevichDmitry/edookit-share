@@ -1,0 +1,106 @@
+@import './colors.less';
+
+/* search-params */
+.search-params {
+  border-radius: 6px;
+  border: 1px solid @border;
+  background: #edf2f7;
+  padding: 14px;
+}
+.search-params__main {
+  display: flex;
+}
+
+.params__searches {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+.params__select {
+  display: inline-block;
+  margin-right: 15px;
+  border: 1px solid @grey4;
+  border-radius: 5px;
+  overflow: hidden;
+  background: @white;
+  background-image: url('../images/arrow-down.svg');
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  background-position: 90% center;
+  &:last-child {
+    margin-right: 0;
+  }
+  select {
+    font-size: 1.125em;
+    padding: 8px 36px 8px 9px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    option:disabled {
+      display: none;
+    }
+  }
+}
+.params__searches-label {
+  margin-bottom: 15px;
+  position: relative;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 11px;
+    right: 8px;
+    width: 22px;
+    height: 34px;
+    background: url('../images/search-icon_gray.svg') no-repeat 0 0;
+    background-size: cover;
+  }
+}
+.params__input {
+  font-size: 1.125em;
+  border: 1px solid @borderDark;
+  border-radius: 5px;
+  padding: 8px;
+  width: 245px;
+}
+
+/* materials */
+.materials {
+  margin-top: 20px;
+}
+.material__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.material__title {
+  font-size: 1.625em;
+  margin-bottom: 7px;
+}
+.material__aside {
+  display: flex;
+  align-items: center;
+}
+.material__status {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  white-space: nowrap;
+}
+.material__likebox {
+  display: flex;
+  margin-left: 35px;
+}

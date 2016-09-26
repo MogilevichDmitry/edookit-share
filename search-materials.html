@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>index</title>
+  <link rel="stylesheet/less" href="styles/style.less">
+  <link rel="stylesheet/less" href="styles/search-materials.less">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="main">
+        <div class="header-wrapper">
+          <a href="#" class="header__logo logo">
+            <span>edookit share</span>
+          </a>
+          <form class="search__form">
+            <div class="tags-list">
+              <div class="tags-list__item">
+                Brno
+                <button class="list-item__close-btn close-btn">delete</button>
+              </div>
+            </div>
+            <input class="search__input" type="text"/>
+            <input class="search__btn" id="search-button" type="submit" value="search"/>
+            <label class="search__btn-label" for="search-button"></label>
+          </form>
+          <div class="header__profile">
+            <a class="profile__link btn-link_green link_underline" href="#">Sign up</a>
+            <a class="profile__link btn-stroke_blue" href="#">Login</a>
+          </div>
+        </div>
+      </div>
+    </div><!--header-->
+    <div class="content">
+      <div class="main">
+        <div class="content-wrapper">
+          <div class="search-params">
+            <div class="search-params__main">
+              <div class="search-params__general">
+                <div class="params__selects">
+                  <label class="params__select">
+                    <select>
+                      <option value="" disabled selected>Typ skoly</option>
+                      <option>option 1</option>
+                      <option>option 2</option>
+                    </select>
+                  </label>
+                  <label class="params__select">
+                    <select>
+                      <option value="" disabled selected>Jazyk</option>
+                      <option>option 1</option>
+                      <option>option 2</option>
+                    </select>
+                  </label>
+                  <label class="params__select">
+                    <select>
+                      <option>Typ materialu</option>
+                    </select>
+                  </label>
+                </div>
+                <input type="range" />
+              </div>
+              <div class="params__searches">
+                <label class="params__searches-label">
+                  <input class="params__input" placeholder="Predmet" />
+                </label>
+                <label class="params__searches-label">
+                  <input class="params__input" placeholder="Autor" />
+                </label>
+              </div>
+              <div class="search-params__aside">
+                <div>
+                  <fieldset class="rating">
+                    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="3.5 stars"></label>
+                    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="3 stars"></label>
+                    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="2.5 stars"></label>
+                    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="2 stars"></label>
+                    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="1.5 stars"></label>
+                    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="1 star"></label>
+                    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="0.5 stars"></label>
+                  </fieldset>
+                </div>
+                <div>
+                  <label>
+                    <input type="checkbox" />
+                    Jenom doporucene odbornikmi
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="search-params__advanced">
+              <button class="params__advanced-btn advanced-btn">Advanced search</button>
+            </div>
+          </div>
+          <div class="materials">
+            <div class="material__item box">
+              <div class="material__main">
+                <h1 class="material__title">Zaciname se zlomky</h1>
+                <div class="material__description">
+                  Uvodni hodina k problematice zlomku; vysvetleni s pomoci barevnych papiru;
+                  hra s legem k pochopeni zakladnich pojmu a vztahu
+                </div>
+              </div>
+              <div class="material__aside">
+                <div class="material__status">
+                  <div class="material__stars">*****</div>
+                  <div class="material__section">Matematika</div>
+                  <div class="material__author">Marian Lawrence</div>
+                </div>
+                <div class="material__likebox">
+                  <div class="like-status">
+                    <input type='checkbox'
+                       value='valuable'
+                       id="likebox-1"
+                    />
+                    <label for="likebox-1"></label>
+                    <span class="like-status__count">354</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="material__item box">
+              <div class="material__main">
+                <h1 class="material__title">Test zanglictiny pro 6. rocnik</h1>
+                <div class="material__description">
+                  Uvodni hodina k problematice zlomku; vysvetleni s pomoci barevnych papiru;
+                  hra s legem k pochopeni zakladnich pojmu a vztahu
+                </div>
+              </div>
+              <div class="material__aside">
+                <div class="material__status">
+                  <div class="material__stars">*****</div>
+                  <div class="material__section">French</div>
+                  <div class="material__author">Vera Ryzhkova</div>
+                </div>
+                <div class="material__likebox">
+                  <div class="like-status">
+                    <input type='checkbox'
+                           value='valuable'
+                           id="likebox-2"
+                    />
+                    <label for="likebox-2"></label>
+                    <span class="like-status__count">4</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="material__item box">
+              <div class="material__main">
+                <h1 class="material__title">1. svetova valka</h1>
+                <div class="material__description">
+                  Uvodni hodina k problematice zlomku; vysvetleni s pomoci barevnych papiru;
+                  hra s legem k pochopeni zakladnich pojmu a vztahu
+                </div>
+              </div>
+              <div class="material__aside">
+                <div class="material__status">
+                  <div class="material__stars">*****</div>
+                  <div class="material__section">Dejepis</div>
+                  <div class="material__author">Earl Knight</div>
+                </div>
+                <div class="material__likebox">
+                  <div class="like-status">
+                    <input type='checkbox'
+                           value='valuable'
+                           id="likebox-3"
+                    />
+                    <label for="likebox-3"></label>
+                    <span class="like-status__count">1999</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="material__item box">
+              <div class="material__main">
+                <h1 class="material__title">TimeZones</h1>
+                <div class="material__description">
+                  It to make a type specimen book. It has survived not only five centuries,
+                  but also the leap into electronic typesetting, remaining essentially unchanged.
+                  It was popularised in the 1960s with the release of
+                </div>
+              </div>
+              <div class="material__aside">
+                <div class="material__status">
+                  <div class="material__stars">*****</div>
+                  <div class="material__section">English</div>
+                  <div class="material__author">Olivia Wilde</div>
+                </div>
+                <div class="material__likebox">
+                  <div class="like-status">
+                    <input type='checkbox'
+                           value='valuable'
+                           id="likebox-4"
+                    />
+                    <label for="likebox-4"></label>
+                    <span class="like-status__count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--content-->
+  </div>
+</body>
+<script src="js/less.js"></script>
+</html>

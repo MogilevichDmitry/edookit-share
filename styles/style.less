@@ -12,7 +12,7 @@ button {
   border: 0;
   background: none;
 }
-input, textarea {
+input, textarea, select {
   font-family: 'Source Sans Pro', sans-serif;
 }
 .main {
@@ -32,14 +32,192 @@ input, textarea {
 .logo {
   background: url('../images/logo.svg') no-repeat 0 0;
 }
-.content {
-  margin-top: 20px;
-}
 .box {
   border: 1px solid @border;
   border-radius: 6px;
   background: @white;
 }
+.content {
+  margin-top: 20px;
+}
+
+/* header */
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 0 15px;
+}
+.header__profile {
+  order: 3;
+}
+.header__logo {
+  display: inline-block;
+  width: 114px;
+  height: 41px;
+  transition: opacity ease-out 0.1s;
+  span {
+    visibility: hidden;
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+}
+.profile__link {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+/* search__form */
+.search__form {
+  display: flex;
+  position: relative;
+  width: 58%;
+  border: 1px solid @border;
+  border-radius: 6px;
+  background: @white;
+  height: 41px;
+  padding: 6px 9px;
+}
+.tags-list {
+  display: flex;
+  list-style: none;
+}
+.tags-list__item {
+  display: flex;
+  white-space: nowrap;
+  line-height: 0.98;
+  background: #EDF2F7;
+  margin-right: 5px;
+  border-radius: 20px;
+  font-size: 15px;
+  padding: 6px 8px 6px;
+  &:last-child {
+    position: relative;
+    margin-right: 25px;
+  }
+  &:last-child:after {
+    position: absolute;
+    right: -14px;
+    top: 0;
+    content:'';
+    display: inline-block;
+    width: 2px;
+    background: #EDF2F7;
+    height: 27px;
+  }
+}
+.list-item__close-btn {
+  margin: auto 0 auto 10px;
+}
+.search__input {
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 100%;
+  width: 100%;
+  padding-right: 90px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: @black;
+}
+.search__btn {
+  position: absolute;
+  top: -1px;
+  bottom: 0;
+  right: -1px;
+  width: 70px;
+  border: 0;
+  outline: 0;
+  background: @blue;
+  height: 41px;
+  color: @white;
+  text-indent: -9999px;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: background ease-out 0.1s;
+  &:hover, &:focus {
+    background: darken(@blue, 14%);
+  }
+}
+.search__btn-label {
+  background: url('../images/search-icon.svg') no-repeat 0 0;
+  background-size: cover;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 6px;
+  right: 2px;
+  cursor: pointer;
+}
+
+/* like-box */
+.like-status {
+  border-radius: 6px;
+  background: @greySecondary;
+  padding: 7px;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  input[type=checkbox] {
+    display:none;
+  }
+  input[type=checkbox] + label {
+    cursor: pointer;
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    padding: 0;
+    background: url('../images/like.svg') no-repeat 0 0;
+    background-size: cover;
+    transition: 0.2s ease-in-out;
+
+  }
+  input[type=checkbox]:checked + label {
+    animation: scale 1s;
+    background: url('../images/like_checked.svg') no-repeat 0 0;
+  }
+}
+.like-status__count {
+  color: @black;
+  margin-left: 4px;
+  font-weight: 600;
+}
+
+/* rating */
+.rating {
+  border: none;
+}
+.rating > input { display: none; }
+.rating > label:before {
+  transition: .2s;
+  margin-right: 7px;
+  font-size: 1.55em;
+  font-family: 'FontAwesome';
+  display: inline-block;
+  content: "\f005";
+}
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+.rating > label {
+  color: @white;
+  float: right;
+}
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label { color: @btnPrimary;  }
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label { color: @btnPrimaryHover;  }
 
 /* links and buttons */
 .btn_disabled {
@@ -66,15 +244,55 @@ input, textarea {
 }
 .btn-stroke_blue {
   color: @btnPrimary;
-  padding: 4px 20px;
+  padding: 3px 20px;
   border: 2px solid @btnPrimary;
-  border-radius: 6px;
+  border-radius: 7px;
   transition: background ease-out 0.1s;
   &:hover, &:focus {
     color: @white;
     background: @btnPrimary;
   }
 }
+.close-btn {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  background: @white;
+  border-radius: 50%;
+  background-image: url('../images/close-icon.svg');
+  background-size: 9.5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: .2s;
+  text-indent: -9999px;
+  &:hover {
+    transform: rotate(90deg);
+  }
+}
+.advanced-btn {
+  color: @btnPrimary;
+  background: url('../images/arrow-down_blue.svg') no-repeat;
+  background-size: 15px;
+  background-position: right;
+  padding-right: 20px;
+  &:hover, &:active {
+    color: @btnPrimaryHover;
+  }
+}
 .link_underline {
   text-decoration: underline;
 }
+
+/* keyframes */
+@keyframes scale {
+  from {
+    transform: scale(1.15, 1.15);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+/* TODO need to find another solution load star icons */
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
