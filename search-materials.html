@@ -56,11 +56,22 @@
                   </label>
                   <label class="params__select">
                     <select>
-                      <option>Typ materialu</option>
+                      <option value="" disabled selected>Typ materialu</option>
+                      <option>option 1</option>
+                      <option>option 2</option>
+                      <option>option 3</option>
+                      <option>option 4</option>
                     </select>
                   </label>
                 </div>
-                <input type="range" />
+                <div class="params__slider-wrapper">
+                  <div class="params__slider-heading">Rozmezi rocniku</div>
+                  <input class="params__slider" type="range" />
+                  <div class="params__slider-results">
+                    <div class="slider-results__selected">2nd - 8th</div>
+                    <div class="slider-results__max">12th</div>
+                  </div>
+                </div>
               </div>
               <div class="params__searches">
                 <label class="params__searches-label">
@@ -71,26 +82,38 @@
                 </label>
               </div>
               <div class="search-params__aside">
-                <div>
+                <div class="params__rating">
+                  <div class="params__rating-heading">Minimalne hodnoceni</div>
                   <fieldset class="rating">
                     <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                    <input type="radio" id="star4half" name="rating" value="4 and a half"/><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
                     <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="3.5 stars"></label>
+                    <input type="radio" id="star3half" name="rating" value="3 and a half" checked /><label class="half" for="star3half" title="3.5 stars"></label>
                     <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="3 stars"></label>
                     <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="2.5 stars"></label>
                     <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="2 stars"></label>
-                    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="1.5 stars"></label>
+                    <input type="radio" id="star1half" name="rating" value="1 and a half"/><label class="half" for="star1half" title="1.5 stars"></label>
                     <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="1 star"></label>
                     <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="0.5 stars"></label>
                   </fieldset>
                 </div>
-                <div>
-                  <label>
-                    <input type="checkbox" />
-                    Jenom doporucene odbornikmi
-                  </label>
-                </div>
+                <label class="params__checkbox">
+                  <span class="checkbox">
+                    <input type="checkbox" id="only-expert"/>
+                    <label for="only-expert"></label>
+                  </span>
+                  Jenom doporucene odbornikmi
+                </label>
+              </div>
+              <div class="search-params__view-selector view-selector">
+                <button class="view-selector__item view-selector__item_active">
+                  <div class="list-icon"></div>
+                  <span>list</span>
+                </button>
+                <button class="view-selector__item">
+                  <div class="grid-icon"></div>
+                  <span>grid</span>
+                </button>
               </div>
             </div>
             <div class="search-params__advanced">
@@ -108,7 +131,20 @@
               </div>
               <div class="material__aside">
                 <div class="material__status">
-                  <div class="material__stars">*****</div>
+                  <div class="material__stars">
+                    <fieldset class="rating">
+                      <input type="radio" id="star54" name="rating1" value="5" /><label class = "full" for="star54" title="Awesome - 5 stars"></label>
+                      <input type="radio" id="star4half4" name="rating1" value="4 and a half"/><label class="half" for="star4half4" title="Pretty good - 4.5 stars"></label>
+                      <input type="radio" id="star44" name="rating1" value="4" /><label class = "full" for="star44" title="Pretty good - 4 stars"></label>
+                      <input type="radio" id="star3half4" name="rating1" value="3 and a half" checked /><label class="half" for="star3half4" title="3.5 stars"></label>
+                      <input type="radio" id="star34" name="rating1" value="3" /><label class = "full" for="star34" title="3 stars"></label>
+                      <input type="radio" id="star2half4" name="rating1" value="2 and a half" /><label class="half" for="star2half4" title="2.5 stars"></label>
+                      <input type="radio" id="star24" name="rating1" value="2" /><label class = "full" for="star24" title="2 stars"></label>
+                      <input type="radio" id="star1half4" name="rating1" value="1 and a half"/><label class="half" for="star1half4" title="1.5 stars"></label>
+                      <input type="radio" id="star14" name="rating1" value="1" /><label class = "full" for="star14" title="1 star"></label>
+                      <input type="radio" id="starhalf4" name="rating1" value="half" /><label class="half" for="starhalf" title="0.5 stars"></label>
+                    </fieldset>
+                  </div>
                   <div class="material__section">Matematika</div>
                   <div class="material__author">Marian Lawrence</div>
                 </div>
@@ -128,13 +164,26 @@
               <div class="material__main">
                 <h1 class="material__title">Test zanglictiny pro 6. rocnik</h1>
                 <div class="material__description">
-                  Uvodni hodina k problematice zlomku; vysvetleni s pomoci barevnych papiru;
-                  hra s legem k pochopeni zakladnich pojmu a vztahu
+                  One day in 1918, in his quest to increase the efficiency of his team and
+                  discover better ways to get things done,
                 </div>
               </div>
               <div class="material__aside">
                 <div class="material__status">
-                  <div class="material__stars">*****</div>
+                  <div class="material__stars">
+                    <fieldset class="rating">
+                      <input type="radio" id="star53" name="rating2" value="5" /><label class = "full" for="star53" title="Awesome - 5 stars"></label>
+                      <input type="radio" id="star4half3" name="rating2" value="4 and a half"/><label class="half" for="star4half3" title="Pretty good - 4.5 stars"></label>
+                      <input type="radio" id="star43" name="rating2" value="4" /><label class = "full" for="star43" title="Pretty good - 4 stars"></label>
+                      <input type="radio" id="star3half3" name="rating2" value="3 and a half" checked /><label class="half" for="star3half3" title="3.5 stars"></label>
+                      <input type="radio" id="star33" name="rating2" value="3" /><label class = "full" for="star33" title="3 stars"></label>
+                      <input type="radio" id="star2half3" name="rating2" value="2 and a half" /><label class="half" for="star2half3" title="2.5 stars"></label>
+                      <input type="radio" id="star23" name="rating2" value="2" /><label class = "full" for="star23" title="2 stars"></label>
+                      <input type="radio" id="star1half3" name="rating2" value="1 and a half"/><label class="half" for="star1half3" title="1.5 stars"></label>
+                      <input type="radio" id="star13" name="rating2" value="1" /><label class = "full" for="star13" title="1 star"></label>
+                      <input type="radio" id="starhalf3" name="rating2" value="half" /><label class="half" for="starhalf3" title="0.5 stars"></label>
+                    </fieldset>
+                  </div>
                   <div class="material__section">French</div>
                   <div class="material__author">Vera Ryzhkova</div>
                 </div>
@@ -143,6 +192,7 @@
                     <input type='checkbox'
                            value='valuable'
                            id="likebox-2"
+                           checked
                     />
                     <label for="likebox-2"></label>
                     <span class="like-status__count">4</span>
@@ -154,13 +204,26 @@
               <div class="material__main">
                 <h1 class="material__title">1. svetova valka</h1>
                 <div class="material__description">
-                  Uvodni hodina k problematice zlomku; vysvetleni s pomoci barevnych papiru;
-                  hra s legem k pochopeni zakladnich pojmu a vztahu
-                </div>
+                  Schwab arranged a meeting with a highly-respected productivity consultant named Ivy Lee.
+                  Lee into his office and said, “Show me a way to get more things done.”
               </div>
-              <div class="material__aside">
+            </div>
+            <div class="material__aside">
                 <div class="material__status">
-                  <div class="material__stars">*****</div>
+                  <div class="material__stars">
+                    <fieldset class="rating">
+                      <input type="radio" id="star52" name="rating3" value="5" /><label class = "full" for="star52" title="Awesome - 5 stars"></label>
+                      <input type="radio" id="star4half2" name="rating3" value="4 and a half"/><label class="half" for="star4half2" title="Pretty good - 4.5 stars"></label>
+                      <input type="radio" id="star42" name="rating3" value="4" /><label class = "full" for="star42" title="Pretty good - 4 stars"></label>
+                      <input type="radio" id="star3half2" name="rating3" value="3 and a half" checked /><label class="half" for="star3half2" title="3.5 stars"></label>
+                      <input type="radio" id="star32" name="rating3" value="3" /><label class = "full" for="star32" title="3 stars"></label>
+                      <input type="radio" id="star2half2" name="rating3" value="2 and a half" /><label class="half" for="star2half2" title="2.5 stars"></label>
+                      <input type="radio" id="star22" name="rating3" value="2" /><label class = "full" for="star22" title="2 stars"></label>
+                      <input type="radio" id="star1half2" name="rating3" value="1 and a half"/><label class="half" for="star1half2" title="1.5 stars"></label>
+                      <input type="radio" id="star12" name="rating3" value="1" /><label class = "full" for="star12" title="1 star"></label>
+                      <input type="radio" id="starhalf2" name="rating3" value="half" /><label class="half" for="starhalf2" title="0.5 stars"></label>
+                    </fieldset>
+                  </div>
                   <div class="material__section">Dejepis</div>
                   <div class="material__author">Earl Knight</div>
                 </div>
@@ -182,12 +245,26 @@
                 <div class="material__description">
                   It to make a type specimen book. It has survived not only five centuries,
                   but also the leap into electronic typesetting, remaining essentially unchanged.
-                  It was popularised in the 1960s with the release of
+                  It was popularised in the 1960s with the release of arranged a meeting with a
+                  highly-respected productivity consultant
                 </div>
               </div>
               <div class="material__aside">
                 <div class="material__status">
-                  <div class="material__stars">*****</div>
+                  <div class="material__stars">
+                    <fieldset class="rating">
+                      <input type="radio" id="star51" name="rating4" value="5" /><label class = "full" for="star51" title="Awesome - 5 stars"></label>
+                      <input type="radio" id="star4half1" name="rating4" value="4 and a half"/><label class="half" for="star4half1" title="Pretty good - 4.5 stars"></label>
+                      <input type="radio" id="star41" name="rating4" value="4" /><label class = "full" for="star41" title="Pretty good - 4 stars"></label>
+                      <input type="radio" id="star3half1" name="rating4" value="3 and a half" checked /><label class="half" for="star3half1" title="3.5 stars"></label>
+                      <input type="radio" id="star31" name="rating4" value="3" /><label class = "full" for="star31" title="3 stars"></label>
+                      <input type="radio" id="star2half1" name="rating4" value="2 and a half" /><label class="half" for="star2half1" title="2.5 stars"></label>
+                      <input type="radio" id="star21" name="rating4" value="2" /><label class = "full" for="star21" title="2 stars"></label>
+                      <input type="radio" id="star1half1" name="rating4" value="1 and a half"/><label class="half" for="star1half1" title="1.5 stars"></label>
+                      <input type="radio" id="star11" name="rating4" value="1" /><label class = "full" for="star1" title="1 star"></label>
+                      <input type="radio" id="starhalf1" name="rating4" value="half" /><label class="half" for="starhalf1" title="0.5 stars"></label>
+                    </fieldset>
+                  </div>
                   <div class="material__section">English</div>
                   <div class="material__author">Olivia Wilde</div>
                 </div>
@@ -210,4 +287,5 @@
   </div>
 </body>
 <script src="js/less.js"></script>
+<script src="js/common.js"></script>
 </html>

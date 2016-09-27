@@ -160,7 +160,7 @@ input, textarea, select {
 .like-status {
   border-radius: 6px;
   background: @greySecondary;
-  padding: 7px;
+  padding: 6px;
   align-self: center;
   display: flex;
   align-items: center;
@@ -185,13 +185,97 @@ input, textarea, select {
 }
 .like-status__count {
   color: @black;
-  margin-left: 4px;
+  margin-left: 2.5px;
   font-weight: 600;
+}
+
+/* view selector */
+.view-selector {
+  display: flex;
+  align-items: center;
+}
+.view-selector__item {
+  display: flex;
+  background: #E9EBEE;
+  outline: 0;
+  border: 0;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  transition: background 0.4s ease-in-out;
+  span {
+    font-size: 1px;
+    visibility: hidden;
+  }
+  &:first-child {
+    border-radius: 5px 0 0 5px;
+  }
+  &:last-child {
+    border-radius: 0 5px 5px 0;
+  }
+  &_active {
+    &:first-child {
+      border-radius: 5px;
+    }
+    &:last-child {
+      border-radius: 5px;
+    }
+    background: @white;
+    border: 1px solid @greySecondary;
+    height: 30px;
+    .list-icon {
+      background: url('../images/list-icon_blue.svg') no-repeat 0 0;
+      background-size: cover;
+    }
+    .grid-icon{
+      background: url('../images/grid-icon_blue.svg');
+      background-size: cover;
+    }
+  }
+  &:hover, &:focus {
+    .list-icon {
+      background: url('../images/list-icon_blue.svg') no-repeat 0 0;
+      background-size: cover;
+    }
+    .grid-icon{
+      background: url('../images/grid-icon_blue.svg');
+      background-size: cover;
+    }
+  }
+}
+
+/* checkbox */
+.checkbox {
+  ._no-select;
+  input[type=checkbox] {
+    display: none;
+  }
+  input[type=checkbox] + label:before {
+    display: inline-block;
+    background: white;
+    border: 1px solid @border;
+    border-radius: 6px;
+    content: "\00a0";
+    height: 18px;
+    width: 18px;
+    margin: 1px 3px 0 0;
+    padding: 0;
+    vertical-align: top;
+    color: @blue;
+  }
+  input[type=checkbox]:checked + label:before {
+    border: 1px solid @blue;
+    content: "\2713";
+    line-height: 1.25;
+    font-size: 17px;
+    text-align: center;
+  }
 }
 
 /* rating */
 .rating {
   border: none;
+  margin-right: -7px;
 }
 .rating > input { display: none; }
 .rating > label:before {
@@ -207,7 +291,7 @@ input, textarea, select {
   position: absolute;
 }
 .rating > label {
-  color: @white;
+  color: @greySecondary;
   float: right;
 }
 .rating > input:checked ~ label,
@@ -282,6 +366,29 @@ input, textarea, select {
 }
 .link_underline {
   text-decoration: underline;
+}
+
+/* icons */
+.list-icon {
+  background: url('../images/list-icon.svg') no-repeat 0 0;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  margin: auto;
+}
+.grid-icon {
+  background: url('../images/grid-icon.svg') no-repeat 0 0;
+  width: 17px;
+  height: 17px;
+  background-size: cover;
+  margin: auto;
+}
+
+._no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* keyframes */
