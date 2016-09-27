@@ -196,6 +196,8 @@ input, textarea, select {
 }
 .view-selector__item {
   display: flex;
+  justify-content: center;
+  align-items: center;
   background: #E9EBEE;
   outline: 0;
   border: 0;
@@ -221,7 +223,7 @@ input, textarea, select {
       border-radius: 5px;
     }
     background: @white;
-    border: 1px solid @greySecondary;
+    border: 1px solid @border;
     height: 30px;
     .list-icon {
       background: url('../images/list-icon_blue.svg') no-repeat 0 0;
@@ -374,14 +376,14 @@ input, textarea, select {
   width: 24px;
   height: 24px;
   background-size: cover;
-  margin: auto;
+  margin: auto -1px auto 0;
 }
 .grid-icon {
   background: url('../images/grid-icon.svg') no-repeat 0 0;
   width: 17px;
   height: 17px;
   background-size: cover;
-  margin: auto;
+  margin: auto -1px auto 0;
 }
 
 ._no-select {
